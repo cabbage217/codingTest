@@ -1,6 +1,6 @@
 ## 题目
 
-`
+```
 Requirements:
 
 - Implement a driverless Car based on the provided interface that would be capable of moving forward into different directions and turning clockwise in a car park
@@ -96,7 +96,7 @@ public interface Car {
 Notes:
 
 ·         Acceptance criteria is what we can verify the functionalities of the application. They should be easy, automatic, repeatable ran and built for maintainability purpose.
-`
+```
 
 
 ### 关于代码
@@ -125,12 +125,15 @@ Notes:
 第二版做成了交互式的，用户可以持续输入命令，命令一共有五个，分别是初始化停车场(p或park)、在当前方向上前进(f或forward)、顺时针转向90度(t或turn)和退出(q或quit),使用方法分别如下：
 
 
-`
+```
 初始化停车场：p或park，初始化停车场，需要2个参数，分别是停车场的x值和y值
+
 在当前方向上前进：f或forward，需要一个参数，指出向前移动多少
+
 顺时针转向90度：t或turn，不需要参数
+
 退出：q或quit，不需要参数
-`
+```
 
 ---------------------------
 
