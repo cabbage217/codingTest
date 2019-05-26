@@ -21,6 +21,8 @@ func init() {
 		"turn":    TypeTurn,
 		"q":       TypeQuit,
 		"quit":    TypeQuit,
+		"h":       TypeHelp,
+		"help":    TypeHelp,
 	}
 }
 
@@ -40,6 +42,7 @@ p (or park)    - Init park map with max x and max y, example: p 4 4 or park 4 4.
 f (or forward) - Forward, example f 1 or forward 1
 t (or turn)    - Turn clockwise once, example t or turn
 q (or quit)    - Quit, example q or quit
+h (or help)    - Help, print this help
 `)
 }
 
@@ -98,6 +101,14 @@ func Parse(commandLine string) (*Command, error) {
 	}
 
 	return nil, nil
+}
+
+//测试用辅助函数
+func ParseRestrainErr(commandLine string) *Command {
+	if c, err := Parse(commandLine); err == nil {
+		return c
+	}
+	return nil
 }
 
 //方便输出

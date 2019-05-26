@@ -94,7 +94,7 @@ func runV2() {
 
 	p := &park.Park{}
 	c := &car.Car{}
-	c.Init()
+	c.Init(consts.DirectionNorth)
 
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
@@ -115,8 +115,8 @@ func runV2() {
 			case command.TypeForward:
 				fallthrough
 			case command.TypeTurn:
-				if !p.IsInited() {
-					fmt.Println("park has not inited")
+				if !p.IsInitialized() {
+					fmt.Println("park has not initialized")
 				} else {
 					if e := c.Exec(co); e != nil {
 						fmt.Printf("Error: %s\n", e.Error())
@@ -142,8 +142,8 @@ func checkCarState(c *car.Car, p *park.Park) (pass bool) {
 	if p == nil {
 		fmt.Println("invalid park, can not check")
 		return false
-	} else if !p.IsInited() {
-		fmt.Println("park has not inited, can not check")
+	} else if !p.IsInitialized() {
+		fmt.Println("park has not initialized, can not check")
 		return false
 	}
 

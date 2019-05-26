@@ -15,7 +15,7 @@ type Car struct {
 }
 
 //初始化
-func (c *Car) Init() {
+func (c *Car) Init(direction consts.Direction) {
 	c.orientation = consts.DirectionNorth
 	c.currentPosition = &position.Position{
 		X: 1,

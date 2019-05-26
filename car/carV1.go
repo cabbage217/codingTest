@@ -3,6 +3,7 @@ package car
 import (
 	mainConsts "../consts"
 	"strings"
+	"fmt"
 )
 
 //car第一版
@@ -26,6 +27,8 @@ func (c *CarV1) Move(command string) {
 		return
 	}
 	switch command {
+	case "f":
+		fallthrough
 	case "forward":
 		switch c.orientation {
 		case mainConsts.DirectionNorth:
@@ -38,6 +41,8 @@ func (c *CarV1) Move(command string) {
 			c.x += 1
 		default:
 		}
+	case "t":
+		fallthrough
 	case "turn":
 		c.orientation = (c.orientation + 1) % mainConsts.DirectionCount
 	default:
@@ -55,7 +60,12 @@ func (c *CarV1) GetPositionY() int {
 	return c.y
 }
 
-////当前方向
+//当前方向
 func (c *CarV1) GetOrientation() string {
 	return c.orientation.String()
+}
+
+// 方便输出
+func (c *CarV1) String() string {
+	return fmt.Sprintf("{x: %d, y: %d, orientation: %s}", c.x, c.y, c.orientation)
 }
