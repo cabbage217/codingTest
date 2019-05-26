@@ -16,7 +16,7 @@ type Car struct {
 
 //初始化
 func (c *Car) Init(direction consts.Direction) {
-	c.orientation = consts.DirectionNorth
+	c.orientation = direction
 	c.currentPosition = &position.Position{
 		X: 1,
 		Y: 1,
@@ -53,7 +53,7 @@ func (c *Car) GetCurrentPosition() position.Position {
 
 //重置
 func (c *Car) Reset() {
-	c.Init()
+	c.Init(consts.DirectionNorth)
 }
 
 //方便输出

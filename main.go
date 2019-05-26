@@ -103,7 +103,7 @@ func runV2() {
 			command.PrintHelp()
 		} else if c != nil {
 
-			fmt.Printf("command: %v\n", c)
+			fmt.Printf("command: %v\n", co)
 
 			switch co.Type {
 			case command.TypeQuit:
